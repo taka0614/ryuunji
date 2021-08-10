@@ -44,7 +44,6 @@ p {
 
 #box2{
   flex-direction: column;
-  justify-content: flex-start;
   background-image: url(img/back.jpg);
   background-size: cover;
   background-position: center;
