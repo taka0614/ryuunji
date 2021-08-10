@@ -9,10 +9,19 @@ a {
   text-decoration: none;
 }
 
-#header , #footer {
-  background-image: url(img/UrHil4Zg.png);
-  padding: 40px;
-  text-align: center;
+h2 {
+  font-size: 20px;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+p {
+  font-size: 14px;
+}
+
+#header {
 }
 
 .box{
@@ -44,7 +53,7 @@ a {
 }
 
 .news_header {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
 }
 
@@ -79,15 +88,10 @@ a {
 }
 
 #box4 {
-  background-image: url(img/DSC_0160.png);
-  background-position: center;
-}
-
-#box5 {
   background-image: url(img/lrTsaV9A.jpeg);
 }
 
-#box6 {
+#box5 {
   background-image: url(img/back1.jpg);
   color: #5f5f5f;
   text-shadow: none;
@@ -98,7 +102,10 @@ iframe {
   height: auto;
 }
 
-#footer{
+#footer {
+  background-image: url(img/UrHil4Zg.png);
+  padding: 40px;
+  text-align: center;
 }
 
 #footer a{
