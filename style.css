@@ -73,18 +73,18 @@ p {
   position: absolute;
   bottom: 0;
   right: 0;
-  opacity: .2;
+  opacity: .05;
 }
 
 .kamon2 {
   background-image: url(img/20200810223624822.png);
-  width: 400px;
-  height: 350px;
+  width: 340px;
+  height: 330px;
   background-size: cover;
   position: absolute;
   top: 0%;
   left: -27%;
-  opacity: .2;
+  opacity: .05;
   overflow: hidden;
 }
 
