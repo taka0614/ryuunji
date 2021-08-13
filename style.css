@@ -135,7 +135,7 @@ p {
 }
 
 #box3 {
-  background-image: url(img/H5fGKMnw1.png);
+  background-image: url(img/bry35vhg.jpeg);
   background-position: 25% center;
   line-height: 30px;
 }
@@ -147,6 +147,7 @@ p {
 
 #box4 p {
   margin: 10% 0;
+  line-height: 30px;
 }
 
 .info_btn {
@@ -225,7 +226,6 @@ p {
 #box5 {
   background-image: url(img/87Kwi3VA.jpeg);
   background-position: 30% bottom;
-  filter: grayscale(1);
 }
 
 .event {
@@ -345,4 +345,85 @@ iframe {
   .pagination a .hover-text{
     display: none;
   } 
+}
+
+.animation-screen {
+  position: relative;
+  overflow: hidden;
+}
+
+.animation-screen::before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: url(img/4461297.jpg);
+  background-size: cover;
+  transform: translateX(-100%);
+}
+
+@keyframes show-mask {
+  0% {
+      transform: translateX(-100%);
+  }
+  45% , 55% {
+      transform: translateX(0);
+  }
+  100% {
+      transform: translateX(100%);
+  }
+}
+
+.animation-screen.show::before {
+  animation: show-mask .6s forwards;
+}
+
+@keyframes backcolor1 {
+  0% {
+    background-image: url(img/bry35vhg.jpeg);
+  }
+  100% {
+    background-image: url(img/bry35vhg_1.jpg);
+  }
+}
+
+#box3.show {
+  animation: backcolor1 .3s;
+  background-image: url(img/bry35vhg_1.jpg);
+}
+
+@keyframes backcolor {
+  0% {
+    background-image: url(img/87Kwi3VA.jpg);
+  }
+  100% {
+    background-image: url(img/87Kwi3VA_1.jpg);
+  }
+}
+
+#box5.show {
+  animation: backcolor .3s;
+  background-image: url(img/87Kwi3VA_1.jpg);
+}
+
+@keyframes flow {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animation-target {
+  opacity: 0;
+}
+
+.animation-target.move {
+  animation: flow 2s;
+  opacity: 1;
 }

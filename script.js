@@ -29,4 +29,28 @@ $.scrollify({
   
     });
 
+
+const targetElements = document.querySelectorAll(".animation-target");
+window.addEventListener("scroll", () => {
+    for(let i = 0; i < targetElements.length; i++) {
+        const getTargetDistance = targetElements[i].getBoundingClientRect().top
+        if(window.innerHeight > getTargetDistance) {
+          setTimeout(function(){
+            targetElements[i].classList.add("move");
+          }, 800);
+        }
+    }
+});
+
+const showElements = document.querySelectorAll(".animation-screen");
+window.addEventListener("scroll", () => {
+    for(let i = 0; i < showElements.length; i++) {
+        const getElementDistance = showElements[i].getBoundingClientRect().top + showElements[i].clientHeight * .5;
+        if(window.innerHeight > getElementDistance)  {
+          setTimeout(function(){
+            showElements[i].classList.add("show");
+          }, 800);
+        }
+    }
+});
     
