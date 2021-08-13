@@ -32,6 +32,14 @@ p {
 }
 
 #header {
+  background-image: url(img/UrHil4Zg.png);
+  padding: 20px;
+  text-align: center;
+  color: #e0e0e0;
+}
+
+#header img {
+  width: 200px;
 }
 
 .box{
@@ -130,6 +138,27 @@ p {
   background-image: url(img/H5fGKMnw1.png);
   background-position: 25% center;
   line-height: 30px;
+}
+
+#box4 {
+  background-image: url(img/buojWI6Q.jpeg);
+  background-position: 50% top;
+}
+
+#box4 p {
+  margin: 10% 0;
+}
+
+.info_btn {
+  background-color: #fff;
+  width: 50%;
+  padding: 10px;
+  clip-path: polygon(5% 0, 95% 0, 100% 20%, 100% 80%, 95% 100%, 5% 100%, 0 80%, 0 20%);
+}
+
+.info_btn a {
+  color: #333;
+  text-shadow: none;
 }
 
 .information_img {
