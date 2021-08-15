@@ -83,9 +83,12 @@ p {
   background-image: url(img/12003.jpg);
   background-size: cover;
   background-position: center;
-  background-color: rgba(255,255,255,.8);
-  background-blend-mode: lighten;
   position: relative;
+}
+
+#box2 h2 {
+  color: #fff;
+  text-shadow: 5px 5px 3px #000;
 }
 
 .kamon1 {
@@ -95,7 +98,7 @@ p {
   position: absolute;
   bottom: 0;
   right: 0;
-  opacity: .05;
+  opacity: .5;
 }
 
 .kamon2 {
@@ -106,8 +109,8 @@ p {
   position: absolute;
   top: 0%;
   left: -27%;
-  opacity: .05;
   overflow: hidden;
+  opacity: .5;
 }
 
 .news_header {
@@ -132,8 +135,8 @@ p {
 }
 
 .btn {
-  background-color: #643c;
-  width: 50%;
+  background-color: #664433;
+  width: 150px;
   padding: 10px;
   margin: auto;
   clip-path: polygon(5% 0, 95% 0, 100% 20%, 100% 80%, 95% 100%, 5% 100%, 0 80%, 0 20%);
@@ -144,14 +147,26 @@ p {
 #box3 , #box4 , #box5 , #box6 {
     background-size: cover;
     color: #fff;
-    text-shadow: .5px .5px 3px #000;
+    text-shadow: 5px 5px 3px #000;
     flex-direction: column;
 }
 
 #box3 {
+  line-height: 30px;
+  padding: 0;
+}
+
+.histry {
   background-image: url(img/bry35vhg.jpeg);
   background-position: 25% center;
-  line-height: 30px;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  padding: 100px;
+}
+
+.histry_text {
+  margin: 20% 5%;
 }
 
 #box4 {
@@ -164,15 +179,7 @@ p {
   line-height: 30px;
 }
 
-.info_btn {
-  background-color: #fff;
-  width: 50%;
-  padding: 5px;
-  clip-path: polygon(5% 0, 95% 0, 100% 20%, 100% 80%, 95% 100%, 5% 100%, 0 80%, 0 20%);
-}
-
-.info_btn a {
-  color: #333;
+p.btn.animation-target.move {
   text-shadow: none;
 }
 
@@ -361,6 +368,56 @@ iframe {
   } 
 }
 
+.ripple,
+.ripple:before,
+.ripple:after {/*疑似要素も作り、3つの波紋を作る*/
+  display: block;
+  border-radius: 2px;
+  width: 2px;
+  height: 2px;
+  animation: rip 5s infinite ease-out;
+}
+.ripple {
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 40%;
+  opacity: .5;
+}
+.ripple:before,
+.ripple:after {
+  content: "";
+  position: absolute;
+}
+.ripple:before {/*遅延させる*/
+  animation-delay: 0.2s;
+  top: 5px;
+  left: 25px;
+}
+.ripple:after {/*さらに遅延*/
+  animation-delay: 0.8s;
+  top: 25px;
+  left: 0;
+}
+@keyframes rip {/*keyframesで波紋セッティング*/
+  0% {
+    box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent, 0 0 0 0 transparent,
+      0 0 0 0 transparent;
+  }
+  15% {
+    box-shadow: 0 0 0 0 rgba(255,255,255,.3), 0 0 0 0 rgba(255, 255, 255, 0.4),
+      0 0 0 0 rgba(255,255,255,.5), 0 0 0 0 rgba(0, 0, 0, 0.08);
+      opacity: .3;
+  }
+  100% {
+    box-shadow: 0 0 40px 200px rgba(255,255,255,.5), 0 0 10px 210px transparent,
+      0 0 30px 220px rgba(255,255,255,.8), 0 0 5px 230px transparent;
+      opacity: .1;
+  }
+}
+
+/*ページマスク表示*/
+
 .animation-screen {
   position: relative;
   overflow: hidden;
@@ -370,58 +427,54 @@ iframe {
   content: "";
   display: block;
   position: absolute;
-  z-index: 1;
   width: 100%;
   height: 100%;
-  top: 0;
-  left: 0;
-  background-image: url(img/4461297.jpg);
+  bottom: 0;
+  left: 0%;
+  background-color: rgba(0,0,0,.5);
   background-size: cover;
   transform: translateX(-100%);
 }
 
+.animation-screen_right::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  right: 0%;
+  background-color: rgba(0,0,0,.5);
+  background-size: cover;
+  transform: translateX(100%);
+}
+
+
+
 @keyframes show-mask {
   0% {
-      transform: translateX(-100%);
-  }
-  45% , 55% {
-      transform: translateX(0);
+    transform: translateX(-100%);
   }
   100% {
-      transform: translateX(100%);
+    transform: translateX(0);
+  }
+}
+
+@keyframes show-mask_right {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
   }
 }
 
 .animation-screen.show::before {
-  animation: show-mask .6s forwards;
+  animation: show-mask 1.5s forwards;
 }
 
-@keyframes backcolor1 {
-  0% {
-    background-image: url(img/bry35vhg.jpeg);
-  }
-  100% {
-    background-image: url(img/bry35vhg_1.jpg);
-  }
-}
-
-#box3.show {
-  animation: backcolor1 .3s;
-  background-image: url(img/bry35vhg_1.jpg);
-}
-
-@keyframes backcolor {
-  0% {
-    background-image: url(img/87Kwi3VA.jpg);
-  }
-  100% {
-    background-image: url(img/87Kwi3VA_1.jpg);
-  }
-}
-
-#box5.show {
-  animation: backcolor .3s;
-  background-image: url(img/87Kwi3VA_1.jpg);
+.animation-screen_right.show::before {
+  animation: show-mask_right 1.5s forwards;
 }
 
 @keyframes flow {
@@ -435,9 +488,29 @@ iframe {
 
 .animation-target {
   opacity: 0;
+  z-index: 1;
 }
 
 .animation-target.move {
-  animation: flow 2s;
-  opacity: 1;
+  animation: flow 2s forwards;
 }
+
+
+/*以下フェードイン表示の指定*/
+.animation_text.fadein {
+  opacity: 0;
+  animation: fadein 1.5s ease forwards;
+}
+@keyframes fadein {
+  0% { opacity: 0;}
+  100% {  opacity: 1; z-index: 1;}
+}
+
+/*以下遅延の指定*/
+.txt01.fadein {animation-delay: 1s;}
+.txt02.fadein {animation-delay: 3s;}
+.txt03.fadein {animation-delay: 5s;}
+.txt04.fadein {animation-delay: 7s;}
+.txt05.fadein {animation-delay: 9s;}
+.txt06.fadein {animation-delay: 11s;}
+.txt07.fadein {animation-delay: 13s;}

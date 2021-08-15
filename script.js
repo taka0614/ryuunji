@@ -37,7 +37,19 @@ window.addEventListener("scroll", () => {
         if(window.innerHeight > getTargetDistance) {
           setTimeout(function(){
             targetElements[i].classList.add("move");
-          }, 800);
+          }, 2000);
+        }
+    }
+});
+
+const targetText = document.querySelectorAll(".animation_text");
+window.addEventListener("scroll", () => {
+    for(let i = 0; i < targetText.length; i++) {
+        const getTargetTextDistance = targetText[i].getBoundingClientRect().top
+        if(window.innerHeight > getTargetTextDistance) {
+          setTimeout(function(){
+            targetText[i].classList.add("fadein");
+          }, 2000);
         }
     }
 });
