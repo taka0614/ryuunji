@@ -80,7 +80,7 @@ p {
 
 #box2{
   flex-direction: column;
-  background-image: url(img/12003.jpg);
+  background-image: url(img/12345.jpg);
   background-size: cover;
   background-position: center;
   position: relative;
@@ -431,9 +431,11 @@ iframe {
   height: 100%;
   bottom: 0;
   left: 0%;
+  background-image: url(img/back_img.jpg);
   background-color: rgba(0,0,0,.5);
   background-size: cover;
   transform: translateX(-100%);
+  opacity: .5;
 }
 
 .animation-screen_right::before {
@@ -499,7 +501,7 @@ iframe {
 /*以下フェードイン表示の指定*/
 .animation_text.fadein {
   opacity: 0;
-  animation: fadein 1.5s ease forwards;
+  animation: fadein 1s ease forwards;
 }
 @keyframes fadein {
   0% { opacity: 0;}
