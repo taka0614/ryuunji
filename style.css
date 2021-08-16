@@ -26,7 +26,7 @@ h3 {
 }
 
 p {
-  font-size: 15.5px;
+  font-size: 17px;
   margin-block-end: 1px;
   margin-block-start: 1px;
 }
@@ -128,6 +128,10 @@ p {
   margin-bottom: 10%;
 }
 
+.news_text {
+  font-size: 15px;
+}
+
 .word {
   font-size: 22px;
   margin-bottom: 10px;
@@ -175,7 +179,7 @@ p {
 }
 
 #box4 p {
-  margin: 10% 0;
+  margin: 10% auto;
   line-height: 30px;
 }
 
@@ -362,10 +366,74 @@ iframe {
 }
 
 /*768px以下は現在地表示のテキストを非表示*/
-@media screen and (max-width:768px) { 
+@media (max-width: 768px) { 
   .pagination a .hover-text{
     display: none;
   } 
+}
+
+/*769px以上の処理*/
+
+@media (min-width: 769px) {
+
+  h2 {
+    font-size: 40px;
+  }
+
+  p {
+    font-size: 24px;
+  }
+
+  .news {
+    width: 600px;
+    padding: 3% 5%;
+    margin-bottom: 0;
+  }
+
+  .news_text {
+    font-size: 24px;
+ }
+
+  .btn {
+    padding: 10px 30px;
+}
+
+  .word {
+    font-size: 36px;
+}
+
+  #box3 {
+  line-height: 40px;
+  }
+
+  .histry h2 {
+      margin-top: 12%;
+      margin-bottom: -17%;
+  }
+
+  .access h2 {
+    margin-top: 20%;
+}
+
+  h3 {
+    font-size: 36px;
+    margin-top: 0;
+}
+
+  iframe {
+    width: 600px;
+    height: 300px;
+    margin-top: 2%;
+  }
+
+  .box6_back {
+    height: 300px;
+    z-index: -1;
+  }
+
+  .box6_back1 {
+    height: 200px;
+  }
 }
 
 .ripple,
